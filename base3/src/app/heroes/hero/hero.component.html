@@ -1,0 +1,35 @@
+<h1>{{name}}</h1>
+
+<dl>
+  <div>
+    <dt>Nombre</dt>
+    <dd>{{name}}</dd>
+  </div>
+
+  <div>
+    <dt>Edad</dt>
+    <dd>{{age}}</dd>
+  </div>
+
+  <div>
+    <dt>Metodo</dt>
+    <dd>{{ getHeroDescription() }}</dd>
+  </div>
+
+  <div>
+    <dt>Capitalizado</dt>
+    <dd>{{capitalizeName}}</dd>
+  </div>
+</dl>
+<!--*ngIf=name !=='Spiderman' si es igual a es diferente a ese nombre se mantiene de lo contrario oculta el botn-->
+<button *ngIf="name !=='Spiderman'" (click)="chagenHero()" class="btn btn-primary mx-2">
+  Cambiar Nombre
+</button>
+
+<button *ngIf="age!==19" (click)="changeAge()" class="btn btn-primary mx-2">
+  Cambiar Edad
+</button>
+
+<button *ngIf="age!==24 ||name!=='iroman'" (click)="reset()" class="btn btn-primary mx-2">
+  Resetiar
+</button>
